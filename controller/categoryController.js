@@ -17,7 +17,7 @@ module.exports={
     },
     addCategory:(req,res)=>{
         let {nama}=req.body
-        let sqlCheck=`select * from categories where nama like '%${nama}%'`
+        let sqlCheck=`select * from categories where nama = '${nama}'`
         let sql = `insert into categories values (0,'${nama}')`
         try {
             db.query(sqlCheck,(err,result)=>{

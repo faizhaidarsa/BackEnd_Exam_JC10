@@ -3,7 +3,7 @@ const db = require('../database')
 module.exports={
     getConnection:(req,res)=>{
         let sql = 
-        `select movies.nama as namamovie, categories.nama as namacategory
+        `select movies.id as idmovie, movies.nama as namamovie, categories.id as idcategory, categories.nama as namacategory
         from movies 
         join movcat on movies.id=movcat.idmovie
         join categories on categories.id=movcat.idcategory;`
